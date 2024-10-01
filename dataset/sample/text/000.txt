@@ -1,0 +1,11 @@
+The process of booking a flight begins when the user initiates the request. The user is then prompted to provide the flight ID. Once the flight ID is given, the system calls the checkAvailability function to confirm the flight status and check for availability based on the returned is_air status.
+
+If the flight is available, the system informs the user about the flight's availability and requests their ID number and name. The system then calls the reserveFlight function to make the reservation and checks the success of the reservation based on the returned is_successful status.
+
+If the reservation is successful, the system informs the user that the reservation succeeded and provides the booking details, which are based on other returned values from the reserveFlight. The user is then asked if they want to book another flight.
+
+If the user decides to book another flight, the process loops back to requesting the user's ID number and name for the new reservation. If the user does not want to book another flight, they are welcomed to contact the system again for future needs.
+
+If the flight is not available, the system informs the user that the flight is unavailable and asks if the user wants to book another flight. If the user decides to book another flight, the process returns to checking the availability of the new flight. If the user does not wish to book another flight, they are also welcomed to contact the system for future needs.
+
+If the reservation fails, the system notifies the user of the failure and asks if they want to try booking another flight. If the user agrees, the process loops back to attempting the reservation again. If the user chooses not to rebook, they are informed that they are welcome to contact the system again in the future.

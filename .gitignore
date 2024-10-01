@@ -1,0 +1,14 @@
+ref/
+ref_run/
+/data/
+*tmp*
+wandb/
+.env
+*.ipynb
+
+core.*
+
+
+__*/
+
+__pycache__/

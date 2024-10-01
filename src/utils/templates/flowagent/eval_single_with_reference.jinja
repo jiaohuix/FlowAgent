@@ -1,0 +1,31 @@
+{# 
+reference response?
+-- conversaiont!!
+#}
+Please serve as an impartial judge to evaluate the response quality of the assistant. Your evaluation should be based on the following criteria:
+(1) Correctness: Does the reply remain consistent with the workflow knowledge without any contradictions?
+(2) Helpfulness: Has the user's request been reasonably understood and addressed, fulfilling the user 's needs within the provided workflow scope?
+(3) Humanness: Is the response coherent, clear, complete, and does it include human acknowledgment?
+Please compare the provided response with the reference response and evaluate it based on the mentioned dimensions. Then, aggregate these assessments to assign an overall score. A perfect score is 10 points, with 9-10 points indicating high quality, nearly identical to the reference answer; 7-8 points indicating quality close to the reference answer; 6-7 points being of moderate quality; 4-5 points indicating a lower quality response; and 2-3 points for a response with significant errors.
+
+Here is the knowledge related to the workflow: 
+```
+{{ workflow_info }}
+```
+
+Here is the previous conversation:
+```
+{{ session }}
+```
+
+Here is the true value response from the reference: 
+{{ reference_input }}
+
+Here is the generated response from the assistant: 
+{{ predicted_input }}
+
+
+Just reply with the score, the format is as follows, 
+```
+Score: xxx
+```

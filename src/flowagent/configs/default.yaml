@@ -1,0 +1,46 @@
+# NOTE: the following 4 fields identify one experiment!!!
+# specifically, workflow_dataset & workflow_type should be all same for one exp_version
+# i.e. one `exp_version + workflow_id` identify one experiment
+workflow_dataset: "PDL"
+workflow_type: "flowchart" # text, code, flowchart
+workflow_id: "000"
+exp_version: "default"
+exp_mode: "session"        # session, turn
+exp_save_config: false
+
+user_mode: "llm_profile"   # dummy_user, input_user, llm_profile
+user_llm_name: "gpt-4o-mini"
+user_template_fn: null    # "flowagent/user_llm.jinja"
+# user_profile: true      # -> exp_mode
+user_profile_id: 0
+user_oow_ratio: 0.2
+
+bot_mode: "react_bot"     # dummy_bot, react_bot, pdl_bot
+bot_template_fn: null     # "flowagent/bot_flowbench.jinja"
+bot_llm_name: "gpt-4o"
+bot_action_limit: 5
+pdl_check_dependency: false
+pdl_check_api_dup_calls: true
+pdl_check_api_dup_calls_threshold: 2
+
+api_mode: "llm"           # dummy_api, llm
+api_template_fn: null     # "flowagent/api_llm.jinja"
+api_llm_name: "gpt-4o-mini"
+
+conversation_turn_limit: 20
+log_utterence_time: false
+log_to_db: ture
+
+db_uri: 'mongodb://localhost:27017/'
+db_name: "pdl"
+db_message_collection_name: "messages"
+db_meta_collection_name: "config"
+
+simulate_num_persona: 5
+simulate_max_workers: 10
+
+judge_max_workers: 10
+judge_model_name: "gpt-4o"
+judge_conversation_id: "2024-09-19 15:20:53.462895"
+judge_log_to: "wandb"
+judge_force_rejudge: false

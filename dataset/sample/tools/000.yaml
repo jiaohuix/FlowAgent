@@ -1,0 +1,24 @@
+- API: checkAvailability
+  API Desciption: Check the ticket availability for a flight given by the user
+  Input parameters: {
+    "plan_code": {"type": "string", "description": "Flight ID, such as \"CA1234, CZ5678, MU9101, 3U4567, FM8901, HU7890\"", "required": true}, 
+    "estimated_time": {"type": "string", "description": "Estimated time, in the format: year + month + day + hour. For example, \"12 o'clock on January 7, 2199\". If not filled in, the default is now.", "required": false}
+  }
+  Output parameters: {
+    "is_air": {"type": "string", "description": "Whether the airplane can be ticketed. Enumerated type, [true, false]"}
+  }
+
+- API: reserveFlight
+  API Desciption: Reserve the user's flight number and return the reservation information
+  Input parameters: {
+    "plan_code": {"type": "string", " description": "Flight ID, such as \"CA1234, CZ5678, MU9101, 3U4567, FM8901, HU7890\"", "required": true}, 
+    "cabin_type": {"type": "string", "description": "Cabin type. Enumerated type, [Economy Class, Business Class, First Class]. If not filled in, these types will be selected from front to back", "required": false}, 
+    "estimated_time": {"type": "string", " description": "Estimated time, in the format: year + month + day + hour. For example, \"12 o'clock on January 7, 2199\". If not filled in, the default is now", "required": false}
+  }
+  Output parameters: {
+    "is_successful": {"type": "string", " description": "Whether the reservation is successful. Enumerated type, [true, false]"}, 
+    "boarding_number": {"type ": "string", "description": "Boarding number, such as \"C1, D3, E7, F2, G4, H6\"."}, 
+    "seat_number": {"type": "string", " description": "Seat number, such as \"12A, 15C, 21F, 28D, 34 B, 42E\""}, 
+    "airport_name": {"type": "string", "description ": "Airport name, such as \"Beijing Capital International Airport, Shanghai Pudong International Airport\""}, 
+    "actual_time": {"type": "string", "description": "Actual time , in the format: year + month + day + hour. For example, \"12 o'clock on January 7, 2199\". If not filled in, the default is now."}
+  }

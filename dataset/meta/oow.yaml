@@ -1,0 +1,45 @@
+- name: Intent Switching
+  description: Abruptly changing the original request details or needs during a conversation, leading to an unexpected shift in the dialogue direction.
+  types:
+    - name: Detail Switching
+      description: Changing specific details of the request, such as time, location, or options.
+    - name: Confirmation Switching
+      description: Moving from a confirmation state to a modification state.
+    - name: Attitude Switching
+      description: Changing satisfaction with the current service or option.
+    - name: Request Cancellation
+      description: Moving from making a request to canceling it.
+    - name: Information Addition
+      description: Adding new information or requirements to the original request.
+
+- name: Answering Irrelevantly
+  description: Deliberately not answering the question directly, providing incorrect, vague, or unrelated responses, or deviating from the original question in other ways.
+  types:
+    - name: Incorrect Response
+      description: Giving an obviously wrong answer to tease the other party.
+    - name: Vague Answer
+      description: Providing a vague or ambiguous answer.
+    - name: Topic Shift
+      description: Directly shifting to another topic.
+    - name: Counterquestion
+      description: Responding with a question to prompt the other party to think.
+    - name: Irrelevant Information
+      description: Replying with information unrelated to the question.
+    - name: Partial Answer
+      description: Answering only part of the question, leaving other parts unanswered.
+
+- name: Process Jumping
+  description: Not following the conventional sequence in a process during a conversation, potentially skipping, repeating, returning, or altering certain steps.
+  types:
+    - name: Step Skipping
+      description: Skipping certain steps and moving directly to subsequent ones.
+    - name: Process Restructuring
+      description: Changing the order of steps.
+    - name: Step Repetition
+      description: Repeating a previous step.
+    - name: Returning to Initial Steps
+      description: Going back to the initial steps of the process.
+    - name: Rule Ignoring
+      description: Disregarding certain rules within the process.
+    - name: Step Splitting
+      description: Breaking a step into multiple smaller steps.
