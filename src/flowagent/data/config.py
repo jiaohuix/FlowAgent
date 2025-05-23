@@ -7,7 +7,7 @@ from dataclasses import dataclass, asdict, field
 @dataclass
 class Config:
     workflow_dataset: str = "STAR"
-    workflow_type: str = "text"     # text, code, flowchart
+    workflow_type: str = "pdl"     # text, code, flowchart, pdl
     workflow_id: str = "000"
     exp_version: str = "default"
     exp_mode: str = "session"       # turn, session
@@ -22,7 +22,7 @@ class Config:
     user_oow_ratio: float = 0.1
     
     bot_mode: str = "react_bot"
-    bot_template_fn: str = None     # "flowagent/bot_flowbench.jinja"
+    bot_template_fn: str = None     # "flowagent/bot_pdl.jinja"
     bot_llm_name: str = "gpt-4o"
     bot_action_limit: int = 5
     bot_retry_limit: int = 3
