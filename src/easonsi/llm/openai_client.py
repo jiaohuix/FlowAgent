@@ -2,12 +2,9 @@
 https://github.com/openai/openai-python
 """
 
-import sys, os, json, re, time, requests, yaml, openai, traceback
+import sys, os, json, re, time, yaml, openai, traceback
 from openai.types.chat import ChatCompletion
-from tqdm import tqdm
-# from diskcache import Cache
-# from concurrent.futures import ThreadPoolExecutor, as_completed
-from typing import List, Dict, Optional, Tuple, Union
+from typing import Dict, Union, Tuple
 
 class Formater:
     """ 用于从字符串中提取信息, 比如规范GPT输出的结果 """
