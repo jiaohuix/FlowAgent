@@ -1,9 +1,3 @@
-{# 
-Thought/Action/Action Input
-
-You only need to check whether the target within the provided workflow chart and API information has been completed. If the target goes beyond the scope of the provided workflow information, there is no need to check this target. You don't need to check whether the return value of the API parameter is reasonable, you only need to check whether the parameter collection is reasonable.
-Only consider whether the bot (assistant) has completed the task. If the user does not make any requests in the goal, or makes requests beyond the goal, the goal is considered completed. The main criteria are the collection and invocation of API parameters. You need to focus on examining whether the intent parsing and responses are reasonable, and whether each goal is completed. If all goals are completed, it is considered successful.
-#}
 You serve as an assistant responsible for assessing if a dialogue system has achieved the user's goals. You are given the provided user profile, user objectives, and the dialogue record between the system and the user, your task is to determine if the system has met all the goals of the user.
 Below is the user profile, the user's objectives, including the APIs the user expects to be called with the corresponding input parameters:
 
