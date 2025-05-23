@@ -3,7 +3,8 @@
     "task_infos": {
         "000":{
             "name": "flight booking",
-            "task_background": "flight booking"
+            "task_description": "flight booking",
+            "task_detailed_description": "flight booking"
         }
     }
 }
