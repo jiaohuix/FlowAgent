@@ -1,0 +1,44 @@
+Name: flight booking
+Desc: Provides flight booking services.
+Detailed_desc: 
+
+SLOTs:
+  - name: plan_code
+    desc: Flight ID, such as "CA1234, CZ5678, MU9101, 3U4567, FM8901, HU7890"
+  - name: cabin_type
+    desc: Cabin type. Enumerated type, [Economy Class, Business Class, First Class]. If not filled in, these types will be selected from front to back
+  - name: estimated_time
+    desc: |
+      Estimated time, in the format: year + month + day + hour. For example, "12 o'clock on January 7, 2199". If not filled in, the default is now.
+
+APIs:
+  - name: checkAvailability
+    request: [plan_code, estimated_time]
+    response: [is_air]
+    precondition: []
+  - name: reserveFlight
+    request: [plan_code, cabin_type, estimated_time]
+    response: [is_successful, boarding_number, seat_number, airport_name, actual_time]
+    precondition: [checkAvailability]
+
+
+ANSWERs:
+  - name: Other free response questions
+  - name: Please provide necessary information
+
+PDL: |
+  [plan_code, estimated_time] = ANSWER_Please_provide_necessary_information()
+  is_air = API_checkAvailability([plan_code, estimated_time])
+  if is_air == "true":
+    # inform user the flight is available
+    [id_number, name, cabin_type] = ANSWER_Please_provide_necessary_information()
+    [is_successful, boarding_number, seat_number, airport_name, actual_time] = API_reserveFlight([plan_code, cabin_type, estimated_time])
+    if is_successful == "true":
+      # inform user the reservation is successful and provide the booking details
+    else:
+      # inform user the reservation is not successful. Ask if the user wants to book another flight
+      # if user wants to book another flight, repeat the process; else, they are welcomed for future needs
+  else:
+    # inform user the flight is not available. Ask if the user wants to book another flight
+    # if user wants to book another flight, repeat the process; else, they are welcomed for future needs
+  
