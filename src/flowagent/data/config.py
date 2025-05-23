@@ -1,6 +1,7 @@
 """ updated @240906 
 """
-import yaml, copy
+import jinja2
+import yaml, copy, os
 from dataclasses import dataclass, asdict, field
 
 @dataclass
@@ -60,7 +61,10 @@ class Config:
     @classmethod
     def from_yaml(cls, yaml_file: str):
         with open(yaml_file, 'r') as file:
-            data = yaml.safe_load(file)
+            # replace ${} with os.environ, with jinja2
+            context = file.read()
+            content = jinja2.Template(context).render(os.environ)
+            data = yaml.safe_load(content)
         obj = cls(**data)
         return obj
     

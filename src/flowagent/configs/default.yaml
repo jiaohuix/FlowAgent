@@ -31,7 +31,7 @@ conversation_turn_limit: 20
 log_utterence_time: false
 log_to_db: ture
 
-db_uri: 'mongodb://9.134.230.111:27017'
+db_uri: {{DB_URI}}
 db_name: "pdl"
 db_message_collection_name: "messages"
 db_meta_collection_name: "config"
