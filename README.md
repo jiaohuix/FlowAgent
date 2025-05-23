@@ -1,13 +1,5 @@
 <h1 align="center">FlowAgent: Achieving Compliance and Flexibility for Workflow Agents</h1>
 <p align="center"><i>bridging the flexibility of agent and compliance of workflow</i></p>
-<!-- <div align="center">
-  <a href="https://anonymous.4open.science/r/IRAIF-B3A0/stargazers"><img src="https://img.shields.io/github/stars/yuleiqin/IRAIF" alt="Stars Badge"/></a>
-<a href="https://anonymous.4open.science/r/IRAIF-B3A0/network/members"><img src="https://img.shields.io/github/forks/yuleiqin/IRAIF" alt="Forks Badge"/></a>
-<a href="https://anonymous.4open.science/r/IRAIF-B3A0/pulls"><img src="https://img.shields.io/github/issues-pr/yuleiqin/IRAIF" alt="Pull Requests Badge"/></a>
-<a href="https://anonymous.4open.science/r/IRAIF-B3A0/issues"><img src="https://img.shields.io/github/issues/yuleiqin/IRAIF" alt="Issues Badge"/></a>
-<a href="https://anonymous.4open.science/r/IRAIF-B3A0/graphs/contributors"><img alt="GitHub contributors" src="https://img.shields.io/github/contributors/yuleiqin/IRAIF?color=2b9348"></a>
-<a href="https://anonymous.4open.science/r/IRAIF-B3A0/LICENSE"><img src="https://img.shields.io/github/license/yuleiqin/IRAIF?color=2b9348" alt="License Badge"/></a>
-</div> -->
 
 <!-- 
 FlowAgent bridges the flexibility of LLMs and workflow compliance via a code-natural language hybrid (PDL) and dynamic controllers. It handles unexpected queries while rigidly following procedures, validated across three benchmarks.
@@ -29,7 +21,7 @@ While LLM-based agents have shown remarkable autonomy in open-ended conversation
 ## Quick Start
 1. clone this repo
 2. copy `.env.example` to `.env`, set `DB_URI`
-3. download data from [[Google Drive](https://drive.google.com/file/d/1XTQpIJjR6-Zm80FpVibGILY8b4TiIEvN/view?usp=sharing)]
+3. download data from [[Google Drive](https://drive.google.com/file/d/1XTQpIJjR6-Zm80FpVibGILY8b4TiIEvN)]
 4. run `bash scripts/run_cli.sh` to interact with the bot
 
 ```bash
@@ -37,23 +29,18 @@ bash scripts/run_cli.sh
 ```
 
 ## Experiments
-## Run FlowAgent
+### Run FlowAgent
 
 ```bash
 bash scripts/run_exp.sh
 ```
 
-## Run Baseline
+### Run Baseline
 
 ```bash
 bash scripts/run_baseline_cli.sh
 bash scripts/run_baseline_exp.sh
 ```
-
-## Prompt Templates
-
-see `src/utils/templates`
-
 
 ## Main Results
 
