@@ -89,7 +89,12 @@ class BaseController:
         self.logger.log(LogUtils.format_infos_with_tabulate(conversation_df), with_print=verbose)
         return infos, conversation
     
+
     def _check_if_already_run(self) -> bool:
+        # 如果不日志到数据库，直接返回False（无需检查）
+        if not self.cfg.log_to_db:
+            return False
+        
         query = {  # identify a single exp
             "exp_version": self.cfg.exp_version,
             "exp_mode": self.cfg.exp_mode,
@@ -102,7 +107,7 @@ class BaseController:
         else:
             query_res = self.db.query_run_experiments(query)
             return len(query_res) > 0
-    
+
     def _record_to_db(self, conversation:Conversation, verbose=True):
         if not self.cfg.log_to_db: return 
         

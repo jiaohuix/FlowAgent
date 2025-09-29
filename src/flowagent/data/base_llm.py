@@ -3,11 +3,14 @@ import os
 from typing import Dict
 from easonsi.llm.openai_client import OpenAIClient
 
+from dotenv import load_dotenv
+load_dotenv()
+
 LLM_CFG = {}
 def add_openai_models():
     global LLM_CFG
     model_list = [
-        "gpt-4o", "gpt-4o-mini", "gpt-4-turbo", "gpt-3.5-turbo", "gpt-4",
+        "gpt-4o", "gpt-4o-mini", "gpt-4-turbo", "gpt-3.5-turbo", "gpt-4", "Qwen/Qwen3-8B"
     ]
     for model in model_list:
         assert model not in LLM_CFG, f"{model} already in LLM_CFG"
