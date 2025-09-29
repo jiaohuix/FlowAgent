@@ -108,6 +108,7 @@ class OpenAIClient:
         chat_completion = self.client.chat.completions.create(
             messages=[{"role": "user", "content": text}],
             model=model,
+            extra_body={"enable_thinking": False},
             **args
         )
         return chat_completion
@@ -123,6 +124,7 @@ class OpenAIClient:
             try:
                 chat_completion: ChatCompletion = self.client.chat.completions.create(
                     messages=[{"role": "user", "content": query}],
+                    extra_body={"enable_thinking": False},
                     **args
                 )
                 # cache.set(_key, res)
@@ -146,6 +148,7 @@ class OpenAIClient:
             messages=[{ "role": "user", "content": text,}],
             model=self.model_name,
             temperature=self.temperature,
+            extra_body={"enable_thinking": False},
             stream=True,
             stop=stop
         )
